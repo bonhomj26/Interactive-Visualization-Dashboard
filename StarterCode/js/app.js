@@ -3,7 +3,7 @@
 // Use D3 library to read in samples.json
 
 function buildMetadata(sample) {
-    d3.json("../../../data/samples.json").then((data) => {
+    d3.json("samples.json").then((data) => {
         var metadata = data.metadata;
 
         // Getting the object for the sample by filtering the data
@@ -34,7 +34,7 @@ function buildMetadata(sample) {
 function buildCharts(sample) {
 
     // Getting the data from samples.json
-    d3.json("../../../data/samples.json").then((data) => {
+    d3.json("samples.json").then((data) => {
         var samples = data.samples;
         var sampleResultsArray = samples.filter(sampleObject => sampleObject.id == sample);
         var sampleResults = sampleResultsArray[0];
@@ -118,7 +118,7 @@ function init() {
     var selector = d3.select("#selDataset");
 
     //  Create the dropdown menu with all the samples_Ids
-    d3.json("../../../data/samples.json").then((data) => {
+    d3.json("samples.json").then((data) => {
         var sampleNames = data.names;
         console.log(sampleNames);
 
